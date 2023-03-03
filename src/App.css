@@ -1,0 +1,113 @@
+/*-----------------------HEADER sytles----------------------------*/
+
+.headerDiv {
+  display: flex;
+  padding: 0px 16px;
+  height: 56px;
+  align-items: center;
+}
+.leftDiv {
+  flex: 2;
+  display: flex;
+}
+.sidebarIconDiv {
+  display: flex;
+  align-items: center;
+}
+#sidebarIcon {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+#youtubeIcon {
+  height: 20px;
+  width: auto;
+  padding: 18px 14px;
+}
+
+.userDiv {
+  display: flex;
+  flex: 2;
+  justify-content: flex-end;
+  height: 34px;
+  width: 60px;
+}
+#search-input {
+  width: 50%;
+  border-radius: 40px 0 0 40px;
+  caret-color: var(--yt-spec-text-primary);
+  margin-left: 32px;
+  padding: 0px 4px 0px 16px;
+}
+#search-btn {
+  border-radius: 0 40px 40px 0;
+}
+.searchbarDiv {
+  flex: 8;
+  display: inline-flex;
+  justify-content: center;
+  height: 40px;
+}
+
+/*-------------------------BODY Styles------------------------------*/
+.bodyDiv {
+  display: grid;
+  grid-auto-flow: column;
+}
+.sidebarDiv {
+  padding: 5px;
+  columns: 1;
+  margin: 2px;
+}
+.sidebarDiv > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 2px;
+}
+.sidebarDiv > h4 {
+  margin: 2px;
+  padding-top: 10px;
+}
+
+.mainLayoutDiv {
+  columns: 11;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------------- ButtonList Styles------------------------*/
+#buttonStyles:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#buttonStyles {
+  border-radius: 8px;
+  white-space: nowrap;
+  margin: 12px;
+  margin-left: 0;
+  color: #0f0f0f;
+  transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
+  border: none;
+  padding: 12px;
+  min-width: 12px;
+  box-sizing: border-box;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  display: inline-flex;
+  font-size: var(--ytd-user-comment-font-size);
+  font-weight: var(--ytd-user-comment-font-weight);
+  line-height: var(--ytd-user-comment-line-height);
+  letter-spacing: var(--ytd-user-comment-letter-spacing);
+  font-family: var(--ytd-user-comment-font-family);
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.buttonListDiv {
+  display: flex;
+  overflow-x: scroll;
+}
