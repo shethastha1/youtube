@@ -75,6 +75,37 @@
   flex-direction: column;
 }
 
+/*------------------------------------VIDEO CONTAINER STYLES--------------------------------*/
+.video-container-parent {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 0px 20px; */
+  justify-content: center;
+}
+
+/*------------------------------------VIDEO CARD STYLES--------------------------------*/
+.video-card-parent {
+  max-width: 325px;
+  border: 1px solid #f4f4f4;
+  padding: 8px;
+  margin: 10px 5px;
+}
+.thumbnail {
+  border-radius: 15px;
+  background-color: #939393;
+  cursor: pointer;
+}
+.thumbnail:hover {
+  border-radius: 0px;
+}
+#upload-duration,
+#video-views {
+  font-size: 14px;
+  font-family: "Roboto", "Arial", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  color: #606060;
+}
 /* -------------------------------- ButtonList Styles------------------------*/
 #buttonStyles:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -109,5 +140,9 @@
 
 .buttonListDiv {
   display: flex;
+  overflow-x: hidden;
+  width: 90vw;
+}
+.buttonListDiv:hover {
   overflow-x: scroll;
 }

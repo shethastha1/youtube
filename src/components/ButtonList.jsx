@@ -25,7 +25,7 @@ const ButtonList = () => {
   return (
     <div className="buttonListDiv">
       {list.map((item, index) => (
-        <Button name={item} />
+        <Button key={item + index} name={item} />
       ))}
     </div>
   );
