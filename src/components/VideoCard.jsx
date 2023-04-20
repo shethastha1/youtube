@@ -4,19 +4,10 @@ import moment from "moment";
 const VideoCard = ({ info }) => {
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
-  console.log("INFO", thumbnails.high);
 
   return (
     <div className="video-card-parent">
-      <img
-        src={thumbnails.medium.url}
-        // style={{
-        //   width: `${thumbnails.medium.width}px`,
-        //   height: `${thumbnails.medium.heigth}px`,
-        // }}
-        className="thumbnail"
-        alt="thumbnail"
-      />
+      <img src={thumbnails.medium.url} className="thumbnail" alt="thumbnail" />
       <div>
         <p id="video-title">{title}</p>
         <p id="channel-title">{channelTitle}</p>

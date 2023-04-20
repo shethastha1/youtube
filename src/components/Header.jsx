@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import searchIcon from "../images/searchIcon.jpg";
 import { toggleMenu } from "../utils/appSlice";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -31,10 +32,7 @@ const Header = () => {
           </div>
         </a>
       </div>
-      <div className="searchbarDiv">
-        <input id="search-input" placeholder="Search" />
-        <button id="search-btn">🔍</button>
-      </div>
+      <SearchBar />
       <div className="userDiv">
         <img
           src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"

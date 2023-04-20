@@ -6,7 +6,7 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import store from "./utils/store";
 import MainLayout from "./components/MainLayout";
-import WatchPage from "./components/WatchPage";
+import MainVideo from "./components/MainVideo";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -18,7 +18,7 @@ function App() {
           path: "/",
           element: <MainLayout />,
         },
-        { path: "watch", element: <WatchPage /> },
+        { path: "watch", element: <MainVideo /> },
       ],
     },
   ]);
