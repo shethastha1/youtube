@@ -1,21 +1,36 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { YOUTUBE_SEARCH_DETAILS } from "../utils/constants";
+import { cacheResult } from "../utils/searchSlice";
 
 const SearchBar = () => {
   const [inputString, setInputString] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [inputFocused, setInputFocused] = useState(false);
+  const searchCache = useSelector((store) => store.search);
+  console.log("Search cache", searchCache);
+  const getSearchSuggestions = async () => {
+    const resp = await fetch(YOUTUBE_SEARCH_DETAILS(inputString));
+    const data = await resp.json();
+    setSearchSuggestions(data[1]);
+    dispatch(cacheResult({ [inputString]: data[1] }));
+  };
   useEffect(() => {
     (async () => {
-      console.log("USEEFF CALLED");
-      const resp = await fetch(YOUTUBE_SEARCH_DETAILS(inputString));
-      const data = await resp.json();
-      setSearchSuggestions(data[1]);
+      const timer = setTimeout(() => {
+        if (searchCache[inputString]) {
+          setSearchSuggestions(searchCache[inputString]);
+        } else {
+          getSearchSuggestions();
+        }
+      }, 300);
+      return () => clearTimeout(timer);
     })();
-  }, [inputString]);
+  }, [inputString, searchCache]);
+  const dispatch = useDispatch();
+
   console.log("SEarch suggestios", searchSuggestions);
+
   return (
     <div className="searchbarDiv">
       <input
